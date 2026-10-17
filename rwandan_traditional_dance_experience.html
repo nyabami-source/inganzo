@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inganzo Y'Ikinyarwanda | Rwandan Traditional Dance Experience</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        rwanda: {
+                            gold: '#D4AF37',
+                            ochre: '#C86D2A',
+                            navy: '#0B132B',
+                            darkNavy: '#050B18',
+                            terracotta: '#A04022',
+                            emerald: '#13505B',
+                            cream: '#F7F4EF',
+                            imigongoBlack: '#121212',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Cinzel', 'serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'spin-slow': 'spin 20s linear infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 15px rgba(212, 175, 55, 0.3)' },
+                            '100%': { boxShadow: '0 0 35px rgba(212, 175, 55, 0.8)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom Imigongo Pattern Background overlay */
+        .imigongo-bg {
+            background-color: #050B18;
+            background-image: radial-gradient(#D4AF37 0.75px, transparent 0.75px), radial-gradient(#D4AF37 0.75px, #050B18 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            opacity: 0.95;
+        }
+
+        .imigongo-pattern-border {
+            background: repeating-linear-gradient(
+                45deg,
+                #D4AF37,
+                #D4AF37 10px,
+                #121212 10px,
+                #121212 20px,
+                #A04022 20px,
+                #A04022 30px,
+                #0B132B 30px,
+                #0B132B 40px
+            );
+            height: 6px;
+        }
+
+        .glass-card {
+            background: rgba(11, 19, 43, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .glass-card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(212, 175, 55, 0.6);
+            box-shadow: 0 15px 30px -10px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Particles Canvas */
+        #particles-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050B18;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C86D2A;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
+        /* Equalizer Bars */
+        .eq-bar {
+            transition: height 0.1s ease;
+        }
+    </style>
+</head>
+<body class="bg-rwanda-darkNavy text-rwanda-cream font-sans overflow-x-hidden selection:bg-rwanda-gold selection:text-rwanda-darkNavy">
+
+    <!-- Top Imigongo Cultural Border -->
+    <div class="imigongo-pattern-border fixed top-0 left-0 w-full z-50"></div>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-1 left-0 w-full z-40 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 glass-card rounded-b-2xl px-6 border-t-0">
+                <a href="#hero" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-rwanda-gold to-rwanda-ochre flex items-center justify-center text-rwanda-darkNavy font-bold font-serif text-xl group-hover:scale-110 transition-transform shadow-lg shadow-rwanda-gold/30">
+                        🇷🇼
+                    </div>
+                    <div>
+                        <span class="font-serif font-bold text-lg md:text-xl text-rwanda-gold tracking-wide block">INGANZO</span>
+                        <span class="text-xs tracking-widest text-gray-300 uppercase block font-semibold">Y'IKINYARWANDA</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#styles" class="hover:text-rwanda-gold transition-colors py-2 relative group">
+                        Dance Styles
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-rwanda-gold transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#culture" class="hover:text-rwanda-gold transition-colors py-2 relative group">
+                        Instruments & Attire
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-rwanda-gold transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#drum-studio" class="hover:text-rwanda-gold transition-colors py-2 relative group">
+                        Ingoma Studio
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-rwanda-gold transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#moves-guide" class="hover:text-rwanda-gold transition-colors py-2 relative group">
+                        Move Guide
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-rwanda-gold transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
+
+                <!-- Quick Action Button -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button onclick="scrollToDrumStudio()" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-rwanda-ochre to-rwanda-gold text-rwanda-darkNavy font-semibold hover:shadow-lg hover:shadow-rwanda-gold/40 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center space-x-2">
+                        <i class="fa-solid fa-drum text-sm"></i>
+                        <span>Play Drums</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-rwanda-gold focus:outline-none p-2 rounded-lg hover:bg-rwanda-navy/50">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden max-w-7xl mx-auto px-4 mt-2">
+            <div class="glass-card rounded-2xl p-6 space-y-4 text-center border-rwanda-gold/30">
+                <a href="#styles" class="block text-lg hover:text-rwanda-gold py-2 border-b border-gray-800">Dance Styles</a>
+                <a href="#culture" class="block text-lg hover:text-rwanda-gold py-2 border-b border-gray-800">Instruments & Attire</a>
+                <a href="#drum-studio" class="block text-lg hover:text-rwanda-gold py-2 border-b border-gray-800">Ingoma Studio</a>
+                <a href="#moves-guide" class="block text-lg hover:text-rwanda-gold py-2">Move Guide</a>
+                <button onclick="scrollToDrumStudio()" class="w-full mt-4 py-3 rounded-xl bg-gradient-to-r from-rwanda-ochre to-rwanda-gold text-rwanda-darkNavy font-bold shadow-lg">
+                    <i class="fa-solid fa-drum mr-2"></i> Play Ingoma Drum Studio
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <main class="relative">
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden imigongo-bg">
+            <canvas id="particles-canvas"></canvas>
+            
+            <!-- Glowing background Orbs -->
+            <div class="absolute top-1/4 left-10 w-72 h-72 bg-rwanda-ochre/20 rounded-full blur-3xl pointer-events-none animate-pulse-slow"></div>
+            <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-rwanda-gold/15 rounded-full blur-3xl pointer-events-none animate-float"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                
+                <!-- Cultural Badge -->
+                <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-card border-rwanda-gold/40 text-rwanda-gold text-xs sm:text-sm font-semibold tracking-wider uppercase mb-8 animate-bounce">
+                    <span class="w-2 h-2 rounded-full bg-rwanda-gold animate-ping"></span>
+                    <span>Cultural Heritage of the Thousand Hills</span>
+                </div>
+
+                <!-- Main Hero Title -->
+                <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-rwanda-cream via-rwanda-gold to-rwanda-ochre mb-6 leading-tight">
+                    INGANZO Y'IKINYARWANDA
+                </h1>
+
+                <p class="max-w-3xl mx-auto text-lg sm:text-xl text-gray-300 font-light leading-relaxed mb-10">
+                    Experience the timeless rhythm, regal grace, and warrior spirit of Rwandan traditional dance. From the majestic leap of the <span class="text-rwanda-gold font-semibold">Intore</span> warriors to the graceful wing extensions of <span class="text-rwanda-gold font-semibold">Umushayizero</span>.
+                </p>
+
+                <!-- Action CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                    <a href="#styles" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-rwanda-gold via-rwanda-ochre to-rwanda-terracotta text-rwanda-darkNavy font-bold text-lg hover:shadow-2xl hover:shadow-rwanda-gold/50 transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 flex items-center justify-center space-x-3 group">
+                        <span>Explore Traditional Dances</span>
+                        <i class="fa-solid fa-arrow-right text-sm group-hover:translate-x-2 transition-transform"></i>
+                    </a>
+                    
+                    <button onclick="scrollToDrumStudio()" class="w-full sm:w-auto px-8 py-4 rounded-full glass-card border-rwanda-gold/50 text-rwanda-gold hover:bg-rwanda-gold/10 font-semibold text-lg transition-all duration-300 flex items-center justify-center space-x-3">
+                        <i class="fa-solid fa-compact-disc text-rwanda-gold animate-spin-slow"></i>
+                        <span>Interactive Drum Sampler</span>
+                    </button>
+                </div>
+
+                <!-- Hero Graphic Showcase (Traditional Motif Graphic Showcase) -->
+                <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-center">
+                    <div class="glass-card p-4 rounded-2xl border-rwanda-gold/20">
+                        <div class="text-2xl text-rwanda-gold mb-1"><i class="fa-solid fa-crown"></i></div>
+                        <h4 class="font-serif font-bold text-sm text-rwanda-cream">Intore Warriors</h4>
+                        <p class="text-xs text-gray-400 mt-1">Strength & Honor</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl border-rwanda-gold/20">
+                        <div class="text-2xl text-rwanda-gold mb-1"><i class="fa-solid fa-feather"></i></div>
+                        <h4 class="font-serif font-bold text-sm text-rwanda-cream">Umushayizero</h4>
+                        <p class="text-xs text-gray-400 mt-1">Elegance & Grace</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl border-rwanda-gold/20">
+                        <div class="text-2xl text-rwanda-gold mb-1"><i class="fa-solid fa-drum"></i></div>
+                        <h4 class="font-serif font-bold text-sm text-rwanda-cream">Ingoma Beat</h4>
+                        <p class="text-xs text-gray-400 mt-1">Royal Percussion</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl border-rwanda-gold/20">
+                        <div class="text-2xl text-rwanda-gold mb-1"><i class="fa-solid fa-wheat-stroke"></i></div>
+                        <h4 class="font-serif font-bold text-sm text-rwanda-cream">Ikinimba</h4>
+                        <p class="text-xs text-gray-400 mt-1">Harvest Celebration</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 2: DANCE STYLES SHOWCASE -->
+        <section id="styles" class="py-24 bg-rwanda-darkNavy relative border-t border-rwanda-gold/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs uppercase tracking-widest text-rwanda-gold font-bold mb-2">Heritage in Motion</h2>
+                    <h3 class="text-3xl sm:text-5xl font-serif font-bold text-rwanda-cream">Rwandan Traditional Dance Styles</h3>
+                    <div class="w-24 h-1 bg-gradient-to-r from-rwanda-gold to-rwanda-ochre mx-auto mt-4 rounded-full"></div>
+                    <p class="text-gray-400 mt-4 text-sm sm:text-base">
+                        Each Rwandan dance style tells an ancient story of pride, nobility, nature, and community joy passed through generations.
+                    </p>
+                </div>
+
+                <!-- Dance Filter Tabs -->
+                <div class="flex justify-center space-x-2 sm:space-x-4 mb-12 overflow-x-auto pb-2">
+                    <button onclick="filterDanceStyle('all')" class="dance-filter-btn active px-5 py-2.5 rounded-full text-sm font-semibold transition-all glass-card border-rwanda-gold/40 text-rwanda-gold bg-rwanda-gold/20">All Styles</button>
+                    <button onclick="filterDanceStyle('intore')" class="dance-filter-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all glass-card text-gray-300 hover:text-rwanda-gold">Intore</button>
+                    <button onclick="filterDanceStyle('umushayizero')" class="dance-filter-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all glass-card text-gray-300 hover:text-rwanda-gold">Umushayizero</button>
+                    <button onclick="filterDanceStyle('ikinimba')" class="dance-filter-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all glass-card text-gray-300 hover:text-rwanda-gold">Ikinimba</button>
+                    <button onclick="filterDanceStyle('ingoma')" class="dance-filter-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all glass-card text-gray-300 hover:text-rwanda-gold">Ingoma</button>
+                </div>
+
+                <!-- Dance Grid Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8" id="dance-cards-container">
+                    
+                    <!-- Card 1: Intore -->
+                    <div class="dance-card intore glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col group">
+                        <div class="relative h-64 overflow-hidden bg-gradient-to-t from-rwanda-navy to-rwanda-darkNavy flex items-center justify-center">
+                            <!-- SVG Cultural Graphic Representation for Intore Warrior -->
+                            <svg class="w-40 h-40 text-rwanda-gold opacity-80 group-hover:scale-110 transition-transform duration-500" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="100" cy="100" r="80" stroke="currentColor" stroke-width="2" stroke-dasharray="6 6" />
+                                <path d="M100 30 L110 90 L170 100 L110 110 L100 170 L90 110 L30 100 L90 90 Z" fill="url(#goldGradient)" />
+                                <path d="M60 40 L140 160 M140 40 L60 160" stroke="#C86D2A" stroke-width="4" stroke-linecap="round"/>
+                                <defs>
+                                    <linearGradient id="goldGradient" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0%" stop-color="#D4AF37"/>
+                                        <stop offset="100%" stop-color="#A04022"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-rwanda-ochre text-rwanda-cream uppercase">Warriors' Dance</span>
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h4 class="text-2xl font-serif font-bold text-rwanda-gold mb-2">Intore (The Chosen Ones)</h4>
+                                <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                                    Historically performed by elite royal palace warriors. Features energetic high-jump leaps, intricate footwork, and wielding of spears (*Itshuri*) and decorative hair wear (*Umushatsi*).
+                                </p>
+                            </div>
+                            <div class="space-y-3 pt-4 border-t border-gray-800">
+                                <div class="flex items-center text-xs text-rwanda-gold space-x-2">
+                                    <i class="fa-solid fa-bolt"></i>
+                                    <span>High Energy • Powerful Athleticism • Martial Precision</span>
+                                </div>
+                                <button onclick="openDanceModal('intore')" class="w-full py-2.5 rounded-xl border border-rwanda-gold/40 text-rwanda-cream hover:bg-rwanda-gold hover:text-rwanda-darkNavy font-semibold text-sm transition-colors">
+                                    Learn Moves & Symbolism
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Umushayizero -->
+                    <div class="dance-card umushayizero glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col group">
+                        <div class="relative h-64 overflow-hidden bg-gradient-to-t from-rwanda-navy to-rwanda-darkNavy flex items-center justify-center">
+                            <!-- SVG Graphic Representation for Graceful Crane/Umushayizero -->
+                            <svg class="w-40 h-40 text-rwanda-gold opacity-80 group-hover:scale-110 transition-transform duration-500" viewBox="0 0 200 200" fill="none">
+                                <path d="M40 120 C 80 40, 120 40, 160 120 C 130 140, 70 140, 40 120 Z" fill="none" stroke="#D4AF37" stroke-width="4" />
+                                <path d="M20 100 Q 100 20 180 100" stroke="#C86D2A" stroke-width="3" fill="none"/>
+                                <circle cx="100" cy="80" r="30" fill="#13505B" opacity="0.5"/>
+                                <circle cx="100" cy="80" r="15" fill="#D4AF37"/>
+                            </svg>
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-rwanda-emerald text-rwanda-cream uppercase">Maidens' Grace</span>
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h4 class="text-2xl font-serif font-bold text-rwanda-gold mb-2">Umushayizero & Amaraba</h4>
+                                <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                                    Performed by women with supreme poise and elegance. Mimics the majestic stride of the long-horned royal cattle (*Inyambo*) and the serene arm movements of the Grey Crowned Crane (*Umusambi*).
+                                </p>
+                            </div>
+                            <div class="space-y-3 pt-4 border-t border-gray-800">
+                                <div class="flex items-center text-xs text-rwanda-gold space-x-2">
+                                    <i class="fa-solid fa-spa"></i>
+                                    <span>Gentle Swaying • Crowned Crane Movements • Royal Elegance</span>
+                                </div>
+                                <button onclick="openDanceModal('umushayizero')" class="w-full py-2.5 rounded-xl border border-rwanda-gold/40 text-rwanda-cream hover:bg-rwanda-gold hover:text-rwanda-darkNavy font-semibold text-sm transition-colors">
+                                    Learn Moves & Symbolism
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Ikinimba -->
+                    <div class="dance-card ikinimba glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col group">
+                        <div class="relative h-64 overflow-hidden bg-gradient-to-t from-rwanda-navy to-rwanda-darkNavy flex items-center justify-center">
+                            <svg class="w-40 h-40 text-rwanda-ochre opacity-80 group-hover:scale-110 transition-transform duration-500" viewBox="0 0 200 200" fill="none">
+                                <polygon points="100,20 170,170 30,170" stroke="#D4AF37" stroke-width="4" fill="none"/>
+                                <circle cx="100" cy="110" r="35" fill="#A04022" opacity="0.6"/>
+                                <path d="M70 140 L130 140 M80 150 L120 150" stroke="#FFF" stroke-width="3"/>
+                            </svg>
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-rwanda-terracotta text-rwanda-cream uppercase">Harvest Folk Dance</span>
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h4 class="text-2xl font-serif font-bold text-rwanda-gold mb-2">Ikinimba</h4>
+                                <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                                    Originating from northern Rwanda (Musanze & Nyabihu). A highly rhythmic harvest dance celebrating agricultural yield, community resilience, and unity, accompanied by acoustic *Inanga*.
+                                </p>
+                            </div>
+                            <div class="space-y-3 pt-4 border-t border-gray-800">
+                                <div class="flex items-center text-xs text-rwanda-gold space-x-2">
+                                    <i class="fa-solid fa-wheat-awn"></i>
+                                    <span>Harvest Joy • Heavy Rhythm Stomping • Community Spirit</span>
+                                </div>
+                                <button onclick="openDanceModal('ikinimba')" class="w-full py-2.5 rounded-xl border border-rwanda-gold/40 text-rwanda-cream hover:bg-rwanda-gold hover:text-rwanda-darkNavy font-semibold text-sm transition-colors">
+                                    Learn Moves & Symbolism
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Ingoma Drums -->
+                    <div class="dance-card ingoma glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col group">
+                        <div class="relative h-64 overflow-hidden bg-gradient-to-t from-rwanda-navy to-rwanda-darkNavy flex items-center justify-center">
+                            <svg class="w-40 h-40 text-rwanda-gold opacity-80 group-hover:scale-110 transition-transform duration-500" viewBox="0 0 200 200" fill="none">
+                                <rect x="60" y="40" width="80" height="120" rx="10" stroke="#D4AF37" stroke-width="4" fill="none"/>
+                                <ellipse cx="100" cy="40" rx="40" ry="15" fill="#C86D2A"/>
+                                <path d="M60 40 L100 160 L140 40" stroke="#D4AF37" stroke-width="2"/>
+                            </svg>
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-rwanda-gold text-rwanda-darkNavy uppercase">Royal Percussion</span>
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h4 class="text-2xl font-serif font-bold text-rwanda-gold mb-2">Ingoma Drum Spectacle</h4>
+                                <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                                    The heartbeat of Rwanda. Master drummers move in dramatic synchronization around the central master drum (*Kalinga*), combining acrobatics, dynamic shouting, and thunderous rhythms.
+                                </p>
+                            </div>
+                            <div class="space-y-3 pt-4 border-t border-gray-800">
+                                <div class="flex items-center text-xs text-rwanda-gold space-x-2">
+                                    <i class="fa-solid fa-drum-steelpan"></i>
+                                    <span>Polyrhythmic Thunder • Synchronized Choreography</span>
+                                </div>
+                                <button onclick="openDanceModal('ingoma')" class="w-full py-2.5 rounded-xl border border-rwanda-gold/40 text-rwanda-cream hover:bg-rwanda-gold hover:text-rwanda-darkNavy font-semibold text-sm transition-colors">
+                                    Learn Moves & Symbolism
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: CULTURAL INSTRUMENTS & ATTIRE EXPLORER -->
+        <section id="culture" class="py-24 bg-gradient-to-b from-rwanda-darkNavy via-rwanda-navy to-rwanda-darkNavy relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs uppercase tracking-widest text-rwanda-gold font-bold mb-2">Craftsmanship & Regalia</h2>
+                    <h3 class="text-3xl sm:text-5xl font-serif font-bold text-rwanda-cream">Instruments & Traditional Attire</h3>
+                    <div class="w-24 h-1 bg-gradient-to-r from-rwanda-gold to-rwanda-ochre mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <!-- Tabs: Instruments vs Attire -->
+                <div class="flex justify-center mb-12">
+                    <div class="glass-card p-1.5 rounded-2xl inline-flex border-rwanda-gold/30">
+                        <button id="tab-btn-instruments" onclick="switchCultureTab('instruments')" class="px-6 py-3 rounded-xl font-bold text-sm transition-all bg-rwanda-gold text-rwanda-darkNavy shadow-md">
+                            <i class="fa-solid fa-music mr-2"></i> Cultural Instruments
+                        </button>
+                        <button id="tab-btn-attire" onclick="switchCultureTab('attire')" class="px-6 py-3 rounded-xl font-bold text-sm transition-all text-gray-300 hover:text-rwanda-gold">
+                            <i class="fa-solid fa-shirt mr-2"></i> Traditional Attire & Hair
+                        </button>
+                    </div>
+                </div>
+
+                <!-- TAB CONTENT 1: INSTRUMENTS -->
+                <div id="culture-content-instruments" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Instrument 1: Ingoma -->
+                    <div class="glass-card p-6 rounded-3xl border-rwanda-gold/20 hover:border-rwanda-gold/60 transition-all">
+                        <div class="w-16 h-16 rounded-2xl bg-rwanda-ochre/20 text-rwanda-gold flex items-center justify-center text-3xl mb-4">
+                            <i class="fa-solid fa-drum"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-rwanda-gold mb-2">Ingoma (Sacred Drum)</h4>
+                        <p class="text-gray-300 text-xs leading-relaxed mb-4">
+                            Carved from indigenous tree trunks (*Ishoza* or *Umugumu*) and covered with cattle hide. Symbolizes national sovereignty and unity.
+                        </p>
+                        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-rwanda-gold/10 text-rwanda-gold border border-rwanda-gold/30">Percussion</span>
+                    </div>
+
+                    <!-- Instrument 2: Inanga -->
+                    <div class="glass-card p-6 rounded-3xl border-rwanda-gold/20 hover:border-rwanda-gold/60 transition-all">
+                        <div class="w-16 h-16 rounded-2xl bg-rwanda-ochre/20 text-rwanda-gold flex items-center justify-center text-3xl mb-4">
+                            <i class="fa-solid fa-guitar"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-rwanda-gold mb-2">Inanga (Trough Zither)</h4>
+                        <p class="text-gray-300 text-xs leading-relaxed mb-4">
+                            A flat carved wooden soundboard with 6 to 12 strings. Produces soothing, meditative melodies for storytelling and epic poetry.
+                        </p>
+                        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-rwanda-gold/10 text-rwanda-gold border border-rwanda-gold/30">Stringed Zither</span>
+                    </div>
+
+                    <!-- Instrument 3: Umuduri -->
+                    <div class="glass-card p-6 rounded-3xl border-rwanda-gold/20 hover:border-rwanda-gold/60 transition-all">
+                        <div class="w-16 h-16 rounded-2xl bg-rwanda-ochre/20 text-rwanda-gold flex items-center justify-center text-3xl mb-4">
+                            <i class="fa-solid fa-ring"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-rwanda-gold mb-2">Umuduri (Musical Bow)</h4>
+                        <p class="text-gray-300 text-xs leading-relaxed mb-4">
+                            A flexible wooden bow with a wire string and a dried gourd resonator (*Inyenga*). Struck with a stick while shaking a rattle (*Inseke*).
+                        </p>
+                        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-rwanda-gold/10 text-rwanda-gold border border-rwanda-gold/30">Single String Bow</span>
+                    </div>
+
+                    <!-- Instrument 4: Ikembe -->
+                    <div class="glass-card p-6 rounded-3xl border-rwanda-gold/20 hover:border-rwanda-gold/60 transition-all">
+                        <div class="w-16 h-16 rounded-2xl bg-rwanda-ochre/20 text-rwanda-gold flex items-center justify-center text-3xl mb-4">
+                            <i class="fa-solid fa-sliders"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-rwanda-gold mb-2">Ikembe (Lamellophone)</h4>
+                        <p class="text-gray-300 text-xs leading-relaxed mb-4">
+                            Handheld wooden soundbox with tuned metal strips plucked by thumbs. Creates polyphonic rhythmic patterns.
+                        </p>
+                        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-rwanda-gold/10 text-rwanda-gold border border-rwanda-gold/30">Thumb Piano</span>
+                    </div>
+                </div>
+
+                <!-- TAB CONTENT 2: ATTIRE (Hidden by default) -->
+                <div id="culture-content-attire" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Attire 1: Umushanana -->
+                    <div class="glass-card p-6 rounded-3xl border-rwanda-gold/20 hover:border-rwanda-gold/60 transition-all">
+                        <div class="w-16 h-16 rounded-2xl bg-rwanda-emerald/20 text-rwanda-gold flex items-center justify-center text-3xl mb-4">
+                            <i class="fa-solid fa-person-dress"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-rwanda-gold mb-2">Umushanana</h4>
+                        <p class="text-gray-300 text-xs leading-relaxed mb-4">
+                            The ceremonial dress for women. Consists of a flowing wrap skirt (*Inshabure*) paired with a sash draped elegantly over one shoulder.
+                        </p>
+                        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-rwanda-emerald/20 text-rwanda-cream">Women's Ceremonial</span>
+                    </div>
+
+                    <!-- Attire 2: Amasunzu -->
+                    <div class="glass-card p-6 rounded-3xl border-rwanda-gold/20 hover:border-rwanda-gold/60 transition-all">
+                        <div class="w-16 h-16 rounded-2xl bg-rwanda-emerald/20 text-rwanda-gold flex items-center justify-center text-3xl mb-4">
+                            <i class="fa-solid fa-user-ninja"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-rwanda-gold mb-2">Amasunzu Hairstyle</h4>
+                        <p class="text-gray-300 text-xs leading-relaxed mb-4">
+                            An iconic crest-like traditional Rwandan hairstyle carved into elaborate crescent shapes symbolizing status, prestige, and pride.
+                        </p>
+                        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-rwanda-emerald/20 text-rwanda-cream">Sculpted Hair Art</span>
+                    </div>
+
+                    <!-- Attire 3: Umushatsi & Shakwe -->
+                    <div class="glass-card p-6 rounded-3xl border-rwanda-gold/20 hover:border-rwanda-gold/60 transition-all">
+                        <div class="w-16 h-16 rounded-2xl bg-rwanda-emerald/20 text-rwanda-gold flex items-center justify-center text-3xl mb-4">
+                            <i class="fa-solid fa-crown"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-rwanda-gold mb-2">Umushatsi & Headband</h4>
+                        <p class="text-gray-300 text-xs leading-relaxed mb-4">
+                            Flowing mane headpieces worn by Intore dancers made from sisal fibers, dynamic shaking creates dramatic visual motion during leaps.
+                        </p>
+                        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-rwanda-emerald/20 text-rwanda-cream">Warrior Headpiece</span>
+                    </div>
+
+                    <!-- Attire 4: Impatwe & Itshuri -->
+                    <div class="glass-card p-6 rounded-3xl border-rwanda-gold/20 hover:border-rwanda-gold/60 transition-all">
+                        <div class="w-16 h-16 rounded-2xl bg-rwanda-emerald/20 text-rwanda-gold flex items-center justify-center text-3xl mb-4">
+                            <i class="fa-solid fa-shield"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-rwanda-gold mb-2">Itshuri & Ingabo</h4>
+                        <p class="text-gray-300 text-xs leading-relaxed mb-4">
+                            Traditional light wooden spears (*Itshuri*) and decorated shields (*Ingabo*) carried during warrior dance routines.
+                        </p>
+                        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-rwanda-emerald/20 text-rwanda-cream">Dance Regalia</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 4: INTERACTIVE DRUM RHYTHM STUDIO (WEB AUDIO API SYNTHESIZER) -->
+        <section id="drum-studio" class="py-24 bg-rwanda-darkNavy relative border-t border-b border-rwanda-gold/20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <div class="inline-block p-3 rounded-2xl bg-rwanda-ochre/20 text-rwanda-gold mb-3">
+                        <i class="fa-solid fa-drum-steelpan text-3xl"></i>
+                    </div>
+                    <h2 class="text-xs uppercase tracking-widest text-rwanda-gold font-bold mb-2">Web Audio Synthesizer</h2>
+                    <h3 class="text-3xl sm:text-5xl font-serif font-bold text-rwanda-cream">Ingoma Beat Studio</h3>
+                    <p class="text-gray-400 mt-3 text-sm">
+                        Experience authentic synthesized Rwandan drum sounds in real-time. Click pads or play preset rhythms!
+                    </p>
+                </div>
+
+                <!-- Main Drum Interface -->
+                <div class="glass-card rounded-3xl p-6 sm:p-10 border-rwanda-gold/30 shadow-2xl relative overflow-hidden">
+                    
+                    <!-- Equalizer Waveform Animation Display -->
+                    <div class="bg-rwanda-darkNavy/80 rounded-2xl p-4 mb-8 border border-rwanda-gold/20 flex items-center justify-between h-24 px-6">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-3 h-3 rounded-full bg-red-500 animate-ping"></span>
+                            <span class="text-xs font-mono text-rwanda-gold uppercase tracking-wider" id="drum-status">Ready • Audio Engine Standby</span>
+                        </div>
+                        
+                        <!-- Equalizer Bars -->
+                        <div class="flex items-end space-x-1 sm:space-x-2 h-12" id="eq-container">
+                            <div class="w-1.5 sm:w-2 bg-rwanda-gold rounded-t eq-bar h-2"></div>
+                            <div class="w-1.5 sm:w-2 bg-rwanda-ochre rounded-t eq-bar h-4"></div>
+                            <div class="w-1.5 sm:w-2 bg-rwanda-gold rounded-t eq-bar h-3"></div>
+                            <div class="w-1.5 sm:w-2 bg-rwanda-terracotta rounded-t eq-bar h-8"></div>
+                            <div class="w-1.5 sm:w-2 bg-rwanda-gold rounded-t eq-bar h-5"></div>
+                            <div class="w-1.5 sm:w-2 bg-rwanda-ochre rounded-t eq-bar h-2"></div>
+                            <div class="w-1.5 sm:w-2 bg-rwanda-gold rounded-t eq-bar h-6"></div>
+                            <div class="w-1.5 sm:w-2 bg-rwanda-terracotta rounded-t eq-bar h-4"></div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Drum Pads -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+                        
+                        <!-- Pad 1: Ishakwe (High Pitch Drum) -->
+                        <button onclick="playDrum('ishakwe')" class="drum-pad group relative p-6 rounded-2xl bg-gradient-to-b from-rwanda-navy to-rwanda-darkNavy border-2 border-rwanda-gold/40 hover:border-rwanda-gold text-center transition-all duration-150 active:scale-95 shadow-lg">
+                            <div class="w-16 h-16 mx-auto rounded-full bg-rwanda-gold/20 border border-rwanda-gold/50 flex items-center justify-center text-rwanda-gold text-2xl mb-3 group-hover:scale-110 transition-transform">
+                                🥁
+                            </div>
+                            <h4 class="font-serif font-bold text-lg text-rwanda-cream">Ishakwe</h4>
+                            <p class="text-xs text-rwanda-gold mt-1">High-Pitch Lead Rhythm</p>
+                            <span class="text-[10px] text-gray-400 block mt-2 font-mono">KEY: [ A ] or CLICK</span>
+                        </button>
+
+                        <!-- Pad 2: Inyahura (Middle Drum) -->
+                        <button onclick="playDrum('inyahura')" class="drum-pad group relative p-6 rounded-2xl bg-gradient-to-b from-rwanda-navy to-rwanda-darkNavy border-2 border-rwanda-ochre/40 hover:border-rwanda-ochre text-center transition-all duration-150 active:scale-95 shadow-lg">
+                            <div class="w-16 h-16 mx-auto rounded-full bg-rwanda-ochre/20 border border-rwanda-ochre/50 flex items-center justify-center text-rwanda-ochre text-2xl mb-3 group-hover:scale-110 transition-transform">
+                                🪘
+                            </div>
+                            <h4 class="font-serif font-bold text-lg text-rwanda-cream">Inyahura</h4>
+                            <p class="text-xs text-rwanda-ochre mt-1">Middle Tone Syncopation</p>
+                            <span class="text-[10px] text-gray-400 block mt-2 font-mono">KEY: [ S ] or CLICK</span>
+                        </button>
+
+                        <!-- Pad 3: Kalinga / Igihumu (Bass Drum) -->
+                        <button onclick="playDrum('kalinga')" class="drum-pad group relative p-6 rounded-2xl bg-gradient-to-b from-rwanda-navy to-rwanda-darkNavy border-2 border-rwanda-terracotta/40 hover:border-rwanda-terracotta text-center transition-all duration-150 active:scale-95 shadow-lg">
+                            <div class="w-16 h-16 mx-auto rounded-full bg-rwanda-terracotta/20 border border-rwanda-terracotta/50 flex items-center justify-center text-rwanda-terracotta text-2xl mb-3 group-hover:scale-110 transition-transform">
+                                🔊
+                            </div>
+                            <h4 class="font-serif font-bold text-lg text-rwanda-cream">Igihumu / Kalinga</h4>
+                            <p class="text-xs text-rwanda-terracotta mt-1">Deep Master Bass Drum</p>
+                            <span class="text-[10px] text-gray-400 block mt-2 font-mono">KEY: [ D ] or CLICK</span>
+                        </button>
+
+                    </div>
+
+                    <!-- Preset Rhythm Sequencers -->
+                    <div class="flex flex-col sm:flex-row items-center justify-between pt-6 border-t border-gray-800 gap-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-sm font-semibold text-gray-300">Preset Traditional Beats:</span>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-3">
+                            <button id="pattern-btn-1" onclick="toggleRhythmPattern('royal')" class="px-5 py-2.5 rounded-xl border border-rwanda-gold/40 text-rwanda-gold text-sm font-semibold hover:bg-rwanda-gold/20 transition-all flex items-center space-x-2">
+                                <i class="fa-solid fa-play text-xs"></i>
+                                <span>Royal Triumph Beat</span>
+                            </button>
+                            
+                            <button id="pattern-btn-2" onclick="toggleRhythmPattern('warrior')" class="px-5 py-2.5 rounded-xl border border-rwanda-ochre/40 text-rwanda-ochre text-sm font-semibold hover:bg-rwanda-ochre/20 transition-all flex items-center space-x-2">
+                                <i class="fa-solid fa-play text-xs"></i>
+                                <span>Intore Charge Rhythm</span>
+                            </button>
+
+                            <button onclick="stopRhythm()" class="px-4 py-2.5 rounded-xl bg-red-900/40 text-red-300 border border-red-500/30 text-sm font-semibold hover:bg-red-800/60 transition-all">
+                                <i class="fa-solid fa-square mr-1"></i> Stop
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 5: VIRTUAL DANCE MOVE STEP VISUALIZER -->
+        <section id="moves-guide" class="py-24 bg-rwanda-darkNavy relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs uppercase tracking-widest text-rwanda-gold font-bold mb-2">Step-by-Step Interactive Guide</h2>
+                    <h3 class="text-3xl sm:text-5xl font-serif font-bold text-rwanda-cream">Master the Dance Moves</h3>
+                    <div class="w-24 h-1 bg-gradient-to-r from-rwanda-gold to-rwanda-ochre mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <!-- Move Step Visualizer Box -->
+                <div class="glass-card rounded-3xl p-6 md:p-10 border-rwanda-gold/30">
+                    
+                    <!-- Step Selector Buttons -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                        <button onclick="loadMoveStep(1)" id="step-tab-1" class="step-tab active p-4 rounded-2xl border border-rwanda-gold bg-rwanda-gold/20 text-rwanda-gold font-serif font-bold text-left transition-all">
+                            <span class="text-xs text-gray-400 font-sans block mb-1">MOVE 01</span>
+                            The Crane Wing Extension (Umusambi)
+                        </button>
+                        <button onclick="loadMoveStep(2)" id="step-tab-2" class="step-tab p-4 rounded-2xl border border-gray-800 text-gray-400 font-serif font-bold text-left hover:border-rwanda-gold/50 transition-all">
+                            <span class="text-xs text-gray-400 font-sans block mb-1">MOVE 02</span>
+                            The Warrior High Leap (Intore Jump)
+                        </button>
+                        <button onclick="loadMoveStep(3)" id="step-tab-3" class="step-tab p-4 rounded-2xl border border-gray-800 text-gray-400 font-serif font-bold text-left hover:border-rwanda-gold/50 transition-all">
+                            <span class="text-xs text-gray-400 font-sans block mb-1">MOVE 03</span>
+                            The Drummer's Stance & Strike
+                        </button>
+                    </div>
+
+                    <!-- Dynamic Move Content Area -->
+                    <div id="move-display-container" class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-rwanda-navy/60 p-6 md:p-8 rounded-2xl border border-rwanda-gold/10">
+                        
+                        <!-- Visual Illustration Canvas / Graphic -->
+                        <div class="relative h-72 rounded-2xl bg-gradient-to-tr from-rwanda-darkNavy to-rwanda-navy border border-rwanda-gold/30 flex items-center justify-center overflow-hidden" id="move-graphic-box">
+                            <div class="text-center p-6" id="graphic-content">
+                                <!-- Dynamic Graphic injected by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Step Instructions & Details -->
+                        <div class="space-y-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold bg-rwanda-gold/20 text-rwanda-gold border border-rwanda-gold/30" id="move-category-tag">Umushayizero Technique</span>
+                            <h4 class="text-3xl font-serif font-bold text-rwanda-gold" id="move-title">The Crane Wing Extension</h4>
+                            
+                            <p class="text-gray-300 text-sm leading-relaxed" id="move-desc">
+                                Arms are gracefully stretched outward like wings, curving gently at the elbows. Body sways softly in unison with smooth foot steps, honoring the majestic Grey Crowned Crane (*Umusambi*).
+                            </p>
+
+                            <div class="space-y-2 pt-2">
+                                <h5 class="text-xs font-bold text-rwanda-gold uppercase tracking-wider">Key Instruction Checklist:</h5>
+                                <ul class="text-xs text-gray-300 space-y-1.5 list-disc list-inside" id="move-instructions">
+                                    <li>Keep shoulders relaxed and neck elongated.</li>
+                                    <li>Extend arms smoothly without rigid tension.</li>
+                                    <li>Step lightly on the balls of your feet in rhythm.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-rwanda-darkNavy border-t border-rwanda-gold/20 pt-16 pb-12 relative imigongo-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-gray-800">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-rwanda-gold to-rwanda-ochre flex items-center justify-center text-rwanda-darkNavy font-bold font-serif text-xl">
+                            🇷🇼
+                        </div>
+                        <span class="font-serif font-bold text-xl text-rwanda-gold">INGANZO Y'IKINYARWANDA</span>
+                    </div>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Dedicated to preserving, celebrating, and sharing the vibrant heritage of Rwandan traditional dance, rhythm, and attire across the globe.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-rwanda-gold mb-4 text-sm uppercase tracking-wider">Quick Cultural Links</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li><a href="#styles" class="hover:text-rwanda-gold transition-colors">Intore & Umushayizero Dances</a></li>
+                        <li><a href="#culture" class="hover:text-rwanda-gold transition-colors">Sacred Ingoma & Inanga Instruments</a></li>
+                        <li><a href="#drum-studio" class="hover:text-rwanda-gold transition-colors">Interactive Drum Beat Synthesizer</a></li>
+                        <li><a href="#moves-guide" class="hover:text-rwanda-gold transition-colors">Rwandan Dance Step Visualizer</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-rwanda-gold mb-4 text-sm uppercase tracking-wider">Cultural Quote</h4>
+                    <blockquote class="text-xs italic text-gray-300 border-l-2 border-rwanda-gold pl-3 py-1">
+                        "Inganzo ni isoko y'umuco n'ishema ry'u Rwanda." <br>
+                        <span class="text-rwanda-gold text-[10px] uppercase not-italic block mt-1">(Traditional Rwandan Expression)</span>
+                    </blockquote>
+                </div>
+            </div>
+
+            <div class="pt-8 text-center text-xs text-gray-500">
+                <p>&copy; 2026 Inganzo Y'Ikinyarwanda. Crafted for Rwandan Traditional Dance & Culture.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL FOR DANCE DETAIL -->
+    <div id="dance-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="glass-card max-w-2xl w-full rounded-3xl p-6 sm:p-8 border-rwanda-gold/50 relative animate-float">
+            <button onclick="closeDanceModal()" class="absolute top-4 right-4 text-gray-400 hover:text-rwanda-gold text-xl w-8 h-8 rounded-full flex items-center justify-center border border-gray-700">
+                &times;
+            </button>
+            
+            <div id="modal-content">
+                <!-- Dynamically filled by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC & AUDIO SYNTHESIZER -->
+    <script>
+        /* -------------------------------------------------------------
+           1. FLOATING GOLD PARTICLES CANVAS EFFECT
+           ------------------------------------------------------------- */
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const particles = Array.from({ length: 45 }, () => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 3 + 1,
+            speedY: -Math.random() * 0.8 - 0.2,
+            opacity: Math.random() * 0.6 + 0.2
+        }));
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.y += p.speedY;
+                if (p.y < 0) p.y = canvas.height;
+                
+                ctx.fillStyle = `rgba(212, 175, 55, ${p.opacity})`;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        /* -------------------------------------------------------------
+           2. NAVIGATION & TABS LOGIC
+           ------------------------------------------------------------- */
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function scrollToDrumStudio() {
+            document.getElementById('drum-studio').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Filter Dance Styles
+        function filterDanceStyle(category) {
+            const buttons = document.querySelectorAll('.dance-filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-rwanda-gold/20', 'text-rwanda-gold', 'border-rwanda-gold/40');
+                btn.classList.add('text-gray-300');
+            });
+            event.currentTarget.classList.add('bg-rwanda-gold/20', 'text-rwanda-gold', 'border-rwanda-gold/40');
+
+            const cards = document.querySelectorAll('.dance-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Switch Culture Tabs (Instruments vs Attire)
+        function switchCultureTab(tab) {
+            const instBtn = document.getElementById('tab-btn-instruments');
+            const attireBtn = document.getElementById('tab-btn-attire');
+            const instContent = document.getElementById('culture-content-instruments');
+            const attireContent = document.getElementById('culture-content-attire');
+
+            if (tab === 'instruments') {
+                instBtn.className = 'px-6 py-3 rounded-xl font-bold text-sm transition-all bg-rwanda-gold text-rwanda-darkNavy shadow-md';
+                attireBtn.className = 'px-6 py-3 rounded-xl font-bold text-sm transition-all text-gray-300 hover:text-rwanda-gold';
+                instContent.classList.remove('hidden');
+                attireContent.classList.add('hidden');
+            } else {
+                attireBtn.className = 'px-6 py-3 rounded-xl font-bold text-sm transition-all bg-rwanda-gold text-rwanda-darkNavy shadow-md';
+                instBtn.className = 'px-6 py-3 rounded-xl font-bold text-sm transition-all text-gray-300 hover:text-rwanda-gold';
+                attireContent.classList.remove('hidden');
+                instContent.classList.add('hidden');
+            }
+        }
+
+        /* -------------------------------------------------------------
+           3. WEB AUDIO API SYNTHESIZER FOR INGOMA DRUMS
+           ------------------------------------------------------------- */
+        let audioCtx = null;
+        let activePatternInterval = null;
+
+        function initAudioContext() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        }
+
+        // Synthesize drum hits
+        function playDrum(type) {
+            initAudioContext();
+            
+            const now = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            triggerEqAnimation();
+
+            if (type === 'ishakwe') {
+                // High tone drum
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(320, now);
+                osc.frequency.exponentialRampToValueAtTime(120, now + 0.15);
+                gain.gain.setValueAtTime(0.8, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.15);
+                osc.start(now);
+                osc.stop(now + 0.15);
+                document.getElementById('drum-status').innerText = 'Playing: Ishakwe (High Drum)';
+            } else if (type === 'inyahura') {
+                // Middle drum
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(180, now);
+                osc.frequency.exponentialRampToValueAtTime(60, now + 0.25);
+                gain.gain.setValueAtTime(1.0, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
+                osc.start(now);
+                osc.stop(now + 0.25);
+                document.getElementById('drum-status').innerText = 'Playing: Inyahura (Middle Drum)';
+            } else if (type === 'kalinga') {
+                // Heavy Master Bass drum
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(90, now);
+                osc.frequency.exponentialRampToValueAtTime(30, now + 0.45);
+                gain.gain.setValueAtTime(1.2, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.45);
+                osc.start(now);
+                osc.stop(now + 0.45);
+                document.getElementById('drum-status').innerText = 'Playing: Kalinga (Bass Drum)';
+            }
+        }
+
+        // Keyboard Shortcuts
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'a' || e.key === 'A') playDrum('ishakwe');
+            if (e.key === 's' || e.key === 'S') playDrum('inyahura');
+            if (e.key === 'd' || e.key === 'D') playDrum('kalinga');
+        });
+
+        // Equalizer visual bounce
+        function triggerEqAnimation() {
+            const bars = document.querySelectorAll('.eq-bar');
+            bars.forEach(bar => {
+                const randomHeight = Math.floor(Math.random() * 40) + 10;
+                bar.style.height = `${randomHeight}px`;
+                setTimeout(() => {
+                    bar.style.height = '8px';
+                }, 200);
+            });
+        }
+
+        // Preset Rhythm Sequencers
+        function toggleRhythmPattern(patternName) {
+            stopRhythm();
+            initAudioContext();
+
+            let step = 0;
+            document.getElementById('drum-status').innerText = `Sequencer Running: ${patternName.toUpperCase()} Pattern`;
+
+            if (patternName === 'royal') {
+                activePatternInterval = setInterval(() => {
+                    if (step % 4 === 0) playDrum('kalinga');
+                    if (step % 2 === 1) playDrum('ishakwe');
+                    if (step % 8 === 6) playDrum('inyahura');
+                    step = (step + 1) % 16;
+                }, 200);
+            } else if (patternName === 'warrior') {
+                activePatternInterval = setInterval(() => {
+                    if (step % 2 === 0) playDrum('ishakwe');
+                    if (step % 4 === 2) playDrum('inyahura');
+                    if (step % 8 === 0 || step % 8 === 3) playDrum('kalinga');
+                    step = (step + 1) % 16;
+                }, 160);
+            }
+        }
+
+        function stopRhythm() {
+            if (activePatternInterval) {
+                clearInterval(activePatternInterval);
+                activePatternInterval = null;
+                document.getElementById('drum-status').innerText = 'Sequencer Stopped • Ready';
+            }
+        }
+
+        /* -------------------------------------------------------------
+           4. STEP-BY-STEP DANCE MOVE VISUALIZER
+           ------------------------------------------------------------- */
+        const moveData = {
+            1: {
+                title: "The Crane Wing Extension (Umusambi)",
+                category: "Umushayizero Technique",
+                desc: "Arms are gracefully stretched outward like wings, curving gently at the elbows. Body sways softly in unison with smooth foot steps, honoring the majestic Grey Crowned Crane (*Umusambi*).",
+                instructions: [
+                    "Keep shoulders relaxed and neck elongated.",
+                    "Extend arms smoothly without rigid tension.",
+                    "Step lightly on the balls of your feet in rhythm."
+                ],
+                graphic: `<svg class="w-32 h-32 text-rwanda-gold mx-auto animate-pulse" viewBox="0 0 100 100" fill="none">
+                            <circle cx="50" cy="50" r="45" stroke="#D4AF37" stroke-width="2" stroke-dasharray="4 4"/>
+                            <path d="M20 50 Q50 20 80 50 Q50 80 20 50 Z" fill="#D4AF37" opacity="0.4"/>
+                            <circle cx="50" cy="50" r="10" fill="#D4AF37"/>
+                          </svg>
+                          <p class="text-xs text-rwanda-gold font-mono mt-3">Visual: Graceful Lateral Arm Arc</p>`
+            },
+            2: {
+                title: "The Warrior High Leap (Intore Jump)",
+                category: "Intore Athleticism",
+                desc: "A powerful explosive leap into the air while shaking the sisal mane (*Umushatsi*) and extending spears high in sign of royal victory and courage.",
+                instructions: [
+                    "Gather momentum with two short synchronized steps.",
+                    "Explode vertically from the dominant leg.",
+                    "Flick hair and land softly with balanced knees."
+                ],
+                graphic: `<svg class="w-32 h-32 text-rwanda-ochre mx-auto animate-bounce" viewBox="0 0 100 100" fill="none">
+                            <path d="M50 10 L80 90 L20 90 Z" fill="#C86D2A" opacity="0.5"/>
+                            <line x1="50" y1="10" x2="50" y2="90" stroke="#D4AF37" stroke-width="4"/>
+                          </svg>
+                          <p class="text-xs text-rwanda-ochre font-mono mt-3">Visual: Vertical Elevation Vector</p>`
+            },
+            3: {
+                title: "The Drummer's Stance & Strike",
+                category: "Ingoma Technique",
+                desc: "Wide grounded stance around the drum, holding wooden sticks (*Umuvunyoyi*). Strikes combine full arm swings with expressive head tilts.",
+                instructions: [
+                    "Maintain a wide, knee-bent stable stance.",
+                    "Strike the center of the drum skin for full bass tone.",
+                    "Raise arms high in rhythmic flourish after each strike."
+                ],
+                graphic: `<svg class="w-32 h-32 text-rwanda-terracotta mx-auto" viewBox="0 0 100 100" fill="none">
+                            <rect x="30" y="20" width="40" height="60" rx="5" fill="#A04022" opacity="0.6"/>
+                            <ellipse cx="50" cy="20" rx="20" ry="8" fill="#D4AF37"/>
+                          </svg>
+                          <p class="text-xs text-rwanda-terracotta font-mono mt-3">Visual: Center Percussion Focus</p>`
+            }
+        };
+
+        function loadMoveStep(stepId) {
+            // Update tabs active status
+            document.querySelectorAll('.step-tab').forEach((tab, idx) => {
+                if (idx + 1 === stepId) {
+                    tab.classList.add('border-rwanda-gold', 'bg-rwanda-gold/20', 'text-rwanda-gold');
+                    tab.classList.remove('border-gray-800', 'text-gray-400');
+                } else {
+                    tab.classList.remove('border-rwanda-gold', 'bg-rwanda-gold/20', 'text-rwanda-gold');
+                    tab.classList.add('border-gray-800', 'text-gray-400');
+                }
+            });
+
+            // Update details
+            const data = moveData[stepId];
+            document.getElementById('move-category-tag').innerText = data.category;
+            document.getElementById('move-title').innerText = data.title;
+            document.getElementById('move-desc').innerText = data.desc;
+            document.getElementById('graphic-content').innerHTML = data.graphic;
+
+            const instUl = document.getElementById('move-instructions');
+            instUl.innerHTML = '';
+            data.instructions.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                instUl.appendChild(li);
+            });
+        }
+
+        // Initialize Step 1 on Load
+        loadMoveStep(1);
+
+        /* -------------------------------------------------------------
+           5. MODAL DETAIL POPUP LOGIC
+           ------------------------------------------------------------- */
+        const modalDetails = {
+            intore: {
+                title: "Intore Dance Symbolism",
+                body: "Intore, meaning 'The Chosen Ones', was originally performed by elite royal guards trained in martial arts, poetry, and endurance. The high jumps symbolize leaping over obstacles in battle, while the flowing sisal hair extensions simulate a lion's mane, representing courage, power, and honor."
+            },
+            umushayizero: {
+                title: "Umushayizero Grace & Nobility",
+                body: "Umushayizero is performed by women to celebrate grace, peace, and beauty. The arm movements reflect the regal posture of long-horned Inyambo cattle and the serene gliding of the Crowned Crane. Dancers wear the traditional Umushanana drape and move with controlled poise."
+            },
+            ikinimba: {
+                title: "Ikinimba Harvest Heritage",
+                body: "Native to the mountainous regions of northern Rwanda, Ikinimba celebrates successful harvests and community solidarity. Accompanied by the Inanga string instrument, dancers perform energetic, ground-stomping movements that express joy and gratitude."
+            },
+            ingoma: {
+                title: "Ingoma Royal Drumming Ensemble",
+                body: "Ingoma drums were traditional symbols of kingdom sovereignty. A typical performance features 7 to 9 drums surrounding a lead drum (Kalinga). Drummers rotate in dynamic synchronization, combining percussion mastery with leaps, chants, and theatrical acrobatics."
+            }
+        };
+
+        function openDanceModal(key) {
+            const detail = modalDetails[key];
+            const content = document.getElementById('modal-content');
+            content.innerHTML = `
+                <h3 class="text-2xl font-serif font-bold text-rwanda-gold mb-4">${detail.title}</h3>
+                <p class="text-gray-300 text-sm leading-relaxed mb-6">${detail.body}</p>
+                <button onclick="closeDanceModal()" class="w-full py-3 rounded-xl bg-gradient-to-r from-rwanda-ochre to-rwanda-gold text-rwanda-darkNavy font-bold">
+                    Close Guide
+                </button>
+            `;
+            document.getElementById('dance-modal').classList.remove('hidden');
+        }
+
+        function closeDanceModal() {
+            document.getElementById('dance-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
